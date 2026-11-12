@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Administration | We Feel Your Pain Global Foundation</title>
+<meta name="description" content="National Secretariat and administrative structure of the Foundation.">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="We Feel Your Pain Global Foundation — home"><img src="assets/img/logo.png" alt="We Feel Your Pain Global Foundation logo"></a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html">Home</a><a href="about.html">About</a><a class="btn btn-gold nav-donate" href="donate.html">Donate</a><a href="impact.html">Impact Programs</a><a href="events.html">Events</a><a href="contact.html">Contact</a>
+      <div class="nav-more-mobile"><span class="lbl">More</span><a href="administration.html" aria-current="page">Administration</a><a href="volunteer.html">Volunteer</a><a href="donation.html">Donation</a></div>
+    </nav>
+    <div class="bar-actions">
+      <div class="menu-wrap">
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel" aria-haspopup="true">
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span><span class="t">Menu</span>
+        </button>
+        <div class="menu-panel" id="menuPanel"><a href="administration.html"><strong>Administration</strong><small>National Secretariat and administrative structure</small></a><a href="volunteer.html"><strong>Volunteer</strong><small>Engagement and ways to get involved</small></a><a href="donation.html"><strong>Donation</strong><small>Donation details and records</small></a></div>
+      </div>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / Administration</div>
+    <h1>Administration</h1>
+    <p>National Secretariat and administrative structure of the Foundation.</p>
+  </div>
+</section>
+<section class="admin-section">
+  <div class="wrap">
+    <div class="admin-intro">
+      <div>
+        <span class="tag">Content management</span>
+        <h2>Foundation content</h2>
+        <p>Manage the content that appears across the Foundation website.</p>
+      </div>
+      <aside class="admin-storage-note" role="note">
+        <strong>Publishing controls</strong>
+        <p>Records and uploaded media stay on this device. Mark a record Published to show it on this local website.</p>
+      </aside>
+    </div>
+
+    <div class="admin-auth" id="adminLoginPanel">
+      <form class="admin-auth-form" id="adminLoginForm">
+        <span class="tag">Administrator access</span>
+        <h2>Sign in to manage content</h2>
+        <label class="admin-field"><span>Email address</span><input name="email" type="email" autocomplete="username" required></label>
+        <label class="admin-field"><span>Password</span><input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="btn btn-dark" type="submit">Sign in</button>
+        <p id="adminLoginStatus" class="admin-login-status" role="status" aria-live="polite"></p>
+      </form>
+      <p class="admin-auth-note">Administrator accounts are managed by the site owner. Public account registration is disabled.</p>
+    </div>
+    <p class="admin-setup-alert" id="adminSetupNotice" role="status" hidden></p>
+
+    <div class="admin-manager" id="adminManager" hidden>
+      <div class="admin-account-bar">
+        <span>Signed in as <strong id="adminEmail"></strong></span>
+        <button class="btn btn-ghost" id="adminSignOut" type="button">Sign out</button>
+      </div>
+      <div class="admin-workspace">
+      <div class="admin-collections" id="adminCollections" role="group" aria-label="Content collections"></div>
+      <div class="admin-toolbar">
+        <label class="admin-search">
+          <span>Search records</span>
+          <input id="adminSearch" type="search" placeholder="Search this collection">
+        </label>
+        <div class="admin-backup-actions">
+          <button class="btn btn-ghost" id="exportBackup" type="button">Export backup</button>
+          <button class="btn btn-ghost" id="importBackupButton" type="button">Import backup</button>
+          <input id="importBackup" type="file" accept="application/json,.json" hidden>
+        </div>
+        <button class="btn btn-dark" id="addRecord" type="button">Add record</button>
+      </div>
+      <p class="admin-count" id="adminCount" aria-live="polite"></p>
+      <div class="admin-list" id="adminList" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog class="admin-dialog" id="recordDialog" aria-labelledby="dialogTitle">
+  <form id="recordForm">
+    <div class="admin-dialog-head">
+      <div><span class="tag" id="dialogCollection"></span><h2 id="dialogTitle">Add record</h2></div>
+      <button class="admin-close" type="button" data-close-dialog aria-label="Close dialog">&times;</button>
+    </div>
+    <div class="admin-fields" id="recordFields"></div>
+    <div class="admin-dialog-actions">
+      <button class="btn btn-ghost" type="button" data-close-dialog>Cancel</button>
+      <button class="btn btn-dark" type="submit">Save record</button>
+    </div>
+  </form>
+</dialog>
+<div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="logo-chip"><img src="assets/img/logo.png" alt="We Feel Your Pain Global Foundation logo"></span>
+        <p><strong style="color:#fff">We Feel Your Pain Global Foundation</strong></p>
+        <p>Ghana</p>
+        <p>Together, Changing Lives, Restoring Hope.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="leadership.html">Leadership &amp; Governance</a></li>
+          <li><a href="impact.html">Impact Programs</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get involved</h4>
+        <ul>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="donation.html">Donation</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="administration.html">Administration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Foundation details</h4>
+        <dl>
+          <div><dt>Central administration</dt><dd>National Secretariat</dd></div>
+          <div><dt>Headquarters</dt><dd>Permanent headquarters to be established</dd></div>
+          <div><dt>Administrative status</dt><dd>Temporarily coordinated from Ghana</dd></div>
+          <div><dt>Chapters</dt><dd>COHK, UPSA, KNUST and others as established</dd></div>
+          <div><dt>Contact</dt><dd><a href="tel:0249911037">0249911037</a></dd></div>
+          <div><dt>Official email</dt><dd><a href="mailto:wefeelyourpainglobalfoundation@gmail.com">wefeelyourpainglobalfoundation@gmail.com</a></dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year">2026</span> We Feel Your Pain Global Foundation. All rights reserved.</span>
+      <span>Your Little Help Can Save a Life.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/local-api-client.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/public-content.js" defer></script>
+<script src="assets/js/admin.js" defer></script>
+</body>
+</html>
